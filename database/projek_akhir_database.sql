@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 04:51 PM
+-- Generation Time: Jun 01, 2023 at 08:09 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -29,12 +29,18 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `user` (
   `id_user` int(100) NOT NULL,
-  `kode_user` varchar(25) NOT NULL,
   `fullname` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
   `role` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`id_user`, `fullname`, `email`, `password`, `role`) VALUES
+(1, 'Admin', 'admin@gmail.com', 'admin123', 'Admin');
 
 --
 -- Indexes for dumped tables
@@ -45,6 +51,16 @@ CREATE TABLE `user` (
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `user`
+--
+ALTER TABLE `user`
+  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
