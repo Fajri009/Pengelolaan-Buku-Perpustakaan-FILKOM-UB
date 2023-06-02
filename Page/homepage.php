@@ -1,5 +1,5 @@
 <?php
-    require_once "../../config/koneksi.php";
+    require_once "../config/koneksi.php";
 
     session_start();
 
@@ -12,10 +12,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="../start/start.css">
+    <link rel="stylesheet" href="">
     <title>Home Page</title>
 </head>
 <body>
+    <?php include "navigation_bar.html"; ?>
     <div class="container">
         <h1>HomePage</h1>
         <form method="POST">
