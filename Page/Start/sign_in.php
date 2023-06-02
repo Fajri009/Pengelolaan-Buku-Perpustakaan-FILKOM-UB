@@ -11,7 +11,7 @@
         $result = mysqli_query($koneksi, $query);
 
         if (mysqli_num_rows($result) == 1) {
-            header("Location: ../home/homepage.php");
+            header("Location: ../homepage.php");
             exit();
         } else {
             $error_message = "Username atau Password Salah";

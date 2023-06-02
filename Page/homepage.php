@@ -4,7 +4,7 @@
     session_start();
 
     if (isset($_POST['sign_in'])) {
-        header("Location: ../start/logout.php");
+        header("Location: start/logout.php");
         exit();
     }
 ?>

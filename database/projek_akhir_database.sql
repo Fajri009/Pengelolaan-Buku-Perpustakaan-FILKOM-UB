@@ -39,8 +39,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id_user`, `fullname`, `email`, `password`, `role`) VALUES
-(1, 'Admin', 'admin@gmail.com', 'admin123', 'Admin');
+INSERT INTO `user` (`kode_anggota`, `nim`, `fullname`, `email`, `password`, `role`, `alamat`) VALUES
+(1, 0, 'Admin', 'admin@gmail.com', 'admin123', 'Admin', '-');
 
 --
 -- Indexes for dumped tables
