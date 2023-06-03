@@ -1,10 +1,15 @@
 <?php
-    require_once "../config/koneksi.php";
+    require_once "../../config/koneksi.php";
 
     session_start();
 
+    if (!isset($_SESSION['role'])) {
+        header("Location: ../start/sign_in.php");
+        exit();
+    }
+
     if (isset($_POST['logout'])) {
-        header("Location: ../start/logout.php");
+        header("Location: start/logout.php");
         exit();
     }
 ?>
@@ -17,7 +22,7 @@
 </head>
 <body>
     <div class="navigation-bar">
-        <?php include "navigation_bar.html"; ?>
+        <?php include "../navbar/navigation_bar.php"; ?>
     </div>
     <div class="container">
         <div class="login-box">

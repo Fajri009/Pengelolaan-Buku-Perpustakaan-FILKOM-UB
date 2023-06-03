@@ -1,7 +1,12 @@
 <?php
-    require_once "../config/koneksi.php";
+    require_once "../../config/koneksi.php";
 
     session_start();
+
+    if (!isset($_SESSION['role'])) {
+        header("Location: ../start/sign_in.php");
+        exit();
+    }
 
     if (isset($_POST['sign_in'])) {
         header("Location: ../start/logout.php");
@@ -16,7 +21,7 @@
     <title>Koleksi Buku</title>
 </head>
 <body>
-    <?php include "navigation_bar.html"; ?>
+    <?php include "../navbar/navigation_bar.php"; ?>
     <div class="container">
         <h1>Koleksi Buku</h1>
         <form method="POST">

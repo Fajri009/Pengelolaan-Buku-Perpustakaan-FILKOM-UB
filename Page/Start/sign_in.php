@@ -11,7 +11,9 @@
         $result = mysqli_query($koneksi, $query);
 
         if (mysqli_num_rows($result) == 1) {
-            header("Location: ../homepage.php");
+            $user = mysqli_fetch_assoc($result);
+            $_SESSION['role'] = $user['role'];
+            header("Location: ../home/homepage.php");
             exit();
         } else {
             $error_message = "Username atau Password Salah";

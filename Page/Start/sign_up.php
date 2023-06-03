@@ -5,10 +5,11 @@
 
     if (isset($_POST['sign_up'])) {
         $fullname = $_POST['fullname'];
+        $nim = $_POST['nim'];
         $email = $_POST['email'];
         $password = $_POST['password'];
 
-        $query = "INSERT INTO user (fullname, email, password, role) VALUES ('$fullname', '$email', '$password', 'Pengguna')";
+        $query = "INSERT INTO user (fullname, nim, email, password, role) VALUES ('$fullname', '$nim', '$email', '$password', 'Pengguna')";
         mysqli_query($koneksi, $query);
 
         $id_user = mysqli_insert_id($koneksi);
@@ -35,6 +36,7 @@
             <form method="POST">
                 <img src="../../asset/logo_tut.svg" alt="logo" class="logo">
                 <input name="fullname" type="text" placeholder="Nama Lengkap">
+                <input name="nim" type="int" placeholder="NIM">
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
                 <div class="button-group">
