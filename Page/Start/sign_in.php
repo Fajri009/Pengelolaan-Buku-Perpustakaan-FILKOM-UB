@@ -13,7 +13,7 @@
         if (mysqli_num_rows($result) == 1) {
             $user = mysqli_fetch_assoc($result);
             $_SESSION['role'] = $user['role'];
-            header("Location: ../home/homepage.php");
+            header("Location: ../pengguna/home/homepage.php");
             exit();
         } else {
             $error_message = "Username atau Password Salah";
@@ -36,7 +36,7 @@
         <h1>PERPUSTAKAAN</h1>
         <div class="login-box">
             <form method="POST">
-                <img src="../../asset/logo_tut.svg" alt="logo" class="logo">
+                <img src="../../asset/logo_perpus.svg" alt="logo" class="logo">
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
                 <?php

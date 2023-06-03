@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Roboto Slab';
-    src: url('../../asset/font/RobotoSlab-Regular.ttf') inputat('truetype');
+    src: url('../../asset/font/RobotoSlab-Regular.ttf') format('truetype');
 }
 
 body {
@@ -27,40 +27,35 @@ body {
     height: 100vh;
 }
 
-.input-group {
+.login-box {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* Align items to the left */
-    justify-content: center;
-    margin-bottom: 10px;
+    align-items: center;
     background-color: #fff;
     border-radius: 20px;
-    padding: 40px;
-    width: 340px;
+    padding: 35px;
+    width: 420px;
 }
 
-.input-group label {
-    margin-bottom: 5px; /* Add some space between label and input */
+.profil {
+    margin-bottom: 30px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100px;
 }
 
-.input-group input, select {
-    width: 90%;
-    padding: 10px;
-    box-sizing: border-box;
-    margin-top: 10px;
-    margin-bottom: 20px;
-}
-
-.submit {
-    margin-top: 10px;
-    background-color: #2490c8;
+.logout {
+    margin-top: 15px;
+    background-color: #ff0707;
     color: white;
     cursor: pointer;
     border: none;
     padding: 10px 35px;
-    border-radius: 10px;
+    border-radius: 30px;
+    font-weight: bold;
 }
 
-.submit:hover {
-    background-color: #1c719c;
+.logout:hover {
+    background-color: #d30404;
 }

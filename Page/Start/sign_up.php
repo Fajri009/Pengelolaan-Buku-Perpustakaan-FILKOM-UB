@@ -34,7 +34,7 @@
         <h1>PERPUSTAKAAN</h1>
         <div class="login-box">
             <form method="POST">
-                <img src="../../asset/logo_tut.svg" alt="logo" class="logo">
+                <img src="../../asset/logo_perpus.svg" alt="logo" class="logo">
                 <input name="fullname" type="text" placeholder="Nama Lengkap">
                 <input name="nim" type="int" placeholder="NIM">
                 <input name="email" type="email" placeholder="Email">

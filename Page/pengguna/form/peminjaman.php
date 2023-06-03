@@ -1,15 +1,10 @@
 <?php
-    require_once "../../config/koneksi.php";
+    require_once "../../../config/koneksi.php";
 
     session_start();
 
     if (!isset($_SESSION['role'])) {
-        header("Location: ../start/sign_in.php");
-        exit();
-    }
-
-    if (isset($_POST['sign_in'])) {
-        header("Location: ../start/logout.php");
+        header("Location: ../../start/sign_in.php");
         exit();
     }
 ?>
@@ -18,14 +13,14 @@
 <html>
 <head>
     <link rel="stylesheet" href="form_buku.css">
-    <title>Pengembalian Buku</title>
+    <title>Peminjaman Buku</title>
 </head>
 <body>
     <div class="navigation-bar">
-        <?php include "../navbar/navigation_bar.php"; ?>
+        <?php include "../../navbar/navigation_bar.php"; ?>
     </div>
-    <div class="container">
-        <h1>Formulir Pengembalian Buku</h1>
+    <div class="popup-form-container">
+        <h1>Formulir Peminjaman Buku</h1>
         <div class="input-group">
             <form method="POST">
                 <div class="input-box">
@@ -39,8 +34,8 @@
                 </div>
 
                 <div class="input-box">
-                    <label for="tanggal">Tanggal Pengembalian :</label>
-                    <input type="date" id="tanggal" name="tanggal_Pengembalian">
+                    <label for="tanggal">Tanggal Peminjaman :</label>
+                    <input type="date" id="tanggal" name="tanggal_peminjaman">
                 </div>
 
                 <div class="input-box">

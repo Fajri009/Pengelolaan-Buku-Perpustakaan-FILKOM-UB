@@ -1,5 +1,5 @@
 <?php
-    require_once "../../config/koneksi.php";
+    require_once "../../../config/koneksi.php";
 
     session_start();
 
@@ -9,7 +9,7 @@
     }
 
     if (isset($_POST['sign_in'])) {
-        header("Location: ../start/logout.php");
+        header("Location: start/logout.php");
         exit();
     }
 ?>
@@ -18,12 +18,12 @@
 <html>
 <head>
     <link rel="stylesheet" href="">
-    <title>Koleksi Buku</title>
+    <title>Home Page</title>
 </head>
 <body>
-    <?php include "../navbar/navigation_bar.php"; ?>
+    <?php include "../../navbar/navigation_bar.php"; ?>
     <div class="container">
-        <h1>Koleksi Buku</h1>
+        <h1>HomePage</h1>
         <form method="POST">
             <div class="button-group">
                 <button type="submit" name="sign_in" class="button1">Logout</button>

@@ -9,7 +9,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100vh;
+    height: 95vh;
     background-color: #e7e7e7;
     font-family: 'Roboto Slab', sans-serif;
 }
@@ -21,11 +21,12 @@ body {
 .login-box {
     background-color: #fff;
     border-radius: 20px;
-    padding: 60px;
+    padding: 40px;
     width: 340px;
 }
 
 img {
+    width: 100px;
     margin-bottom: 30px;
 }
 

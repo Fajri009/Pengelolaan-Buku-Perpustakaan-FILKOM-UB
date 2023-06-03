@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 01, 2023 at 08:09 PM
+-- Generation Time: Jun 03, 2023 at 01:02 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -28,11 +28,13 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `user` (
-  `id_user` int(100) NOT NULL,
+  `kode_anggota` int(100) NOT NULL,
+  `nim` bigint(200) NOT NULL,
   `fullname` varchar(150) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(50) NOT NULL,
-  `role` varchar(50) NOT NULL
+  `role` varchar(50) NOT NULL,
+  `alamat` varchar(500) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -40,7 +42,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`kode_anggota`, `nim`, `fullname`, `email`, `password`, `role`, `alamat`) VALUES
-(1, 0, 'Admin', 'admin@gmail.com', 'admin123', 'Admin', '-');
+(1, 0, 'Admin', 'admin@ub.ac.id', 'admin123', 'Admin', '-'),
+(2, 215150207111061, 'Fajri Rayrahman Harlan', 'fajri.harlan.fh@student.ub.ac.id', '12345', 'Pengguna', 'Tangerang');
 
 --
 -- Indexes for dumped tables
@@ -50,7 +53,7 @@ INSERT INTO `user` (`kode_anggota`, `nim`, `fullname`, `email`, `password`, `rol
 -- Indexes for table `user`
 --
 ALTER TABLE `user`
-  ADD PRIMARY KEY (`id_user`);
+  ADD PRIMARY KEY (`kode_anggota`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -60,7 +63,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `kode_anggota` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
