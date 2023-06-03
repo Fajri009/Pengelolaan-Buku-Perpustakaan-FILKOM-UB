@@ -1,34 +1,7 @@
-<?php
-    require_once "../../config/koneksi.php";
-
-    session_start();
-
-    if (isset($_POST['sign_in'])) {
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $query = "SELECT * FROM user WHERE email = '$email' AND password = '$password'";
-        $result = mysqli_query($koneksi, $query);
-
-        if (mysqli_num_rows($result) == 1) {
-            $user = mysqli_fetch_assoc($result);
-            $_SESSION['role'] = $user['role'];
-            header("Location: ../pengguna/home/homepage.php");
-            exit();
-        } else {
-            $error_message = "Username atau Password Salah";
-        }
-    }
-
-    if (isset($_POST['sign_up'])) {
-        header("Location: sign_up.php");
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="Page/Start/start.css">
     <title>Login Page</title>
 </head>
 <body>
@@ -36,7 +9,7 @@
         <h1>PERPUSTAKAAN</h1>
         <div class="login-box">
             <form method="POST">
-                <img src="../../asset/logo_perpus.svg" alt="logo" class="logo">
+                <img src="asset/logo_perpus.svg" alt="logo" class="logo">
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
                 <?php

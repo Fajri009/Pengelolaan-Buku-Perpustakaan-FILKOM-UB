@@ -1,34 +1,25 @@
-<?php
-    require_once "../../../config/koneksi.php";
-
-    session_start();
-
-    if (!isset($_SESSION['role'])) {
-        header("Location: ../start/sign_in.php");
-        exit();
-    }
-
-    if (isset($_POST['sign_in'])) {
-        header("Location: start/logout.php");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Page/pengguna/home/home.css">
     <title>Home Page</title>
 </head>
 <body>
-    <?php include "../../navbar/navigation_bar.php"; ?>
+    <?php include "Page/navbar/navigation_bar.php"; ?>
+    <br>
     <div class="container">
-        <h1>HomePage</h1>
-        <form method="POST">
-            <div class="button-group">
-                <button type="submit" name="sign_in" class="button1">Logout</button>
+        <div class="carousel-title">Book Collection</div>
+        <div class="carousel-container">
+            <button class="prev">&lt;</button>
+            <div class="carousel">
+                <?php
+                foreach ($books as $imagePath) {
+                    echo "<img src=\"$imagePath\" alt=\"Book Image\" />";
+                }
+                ?>
             </div>
-        </form>
+            <button class="next">&gt;</button>
+        </div>
     </div>
 </body>
 </html>

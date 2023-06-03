@@ -1,32 +1,7 @@
-<?php
-    require_once "../../config/koneksi.php";
-
-    session_start();
-
-    if (isset($_POST['sign_up'])) {
-        $fullname = $_POST['fullname'];
-        $nim = $_POST['nim'];
-        $email = $_POST['email'];
-        $password = $_POST['password'];
-
-        $query = "INSERT INTO user (fullname, nim, email, password, role) VALUES ('$fullname', '$nim', '$email', '$password', 'Pengguna')";
-        mysqli_query($koneksi, $query);
-
-        $id_user = mysqli_insert_id($koneksi);
-
-        header("Location: sign_in.php");
-        exit();
-    }
-
-    if (isset($_POST['sign_in'])) {
-        header("Location: sign_in.php");
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="Page/Start/start.css">
     <title>Login Page</title>
 </head>
 <body>
@@ -34,7 +9,7 @@
         <h1>PERPUSTAKAAN</h1>
         <div class="login-box">
             <form method="POST">
-                <img src="../../asset/logo_perpus.svg" alt="logo" class="logo">
+                <img src="asset/logo_perpus.svg" alt="logo" class="logo">
                 <input name="fullname" type="text" placeholder="Nama Lengkap">
                 <input name="nim" type="int" placeholder="NIM">
                 <input name="email" type="email" placeholder="Email">

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="../../navbar/navigation_bar.css">
+    <link rel="stylesheet" href="Page/navbar/navigation_bar.css">
     <title>Navigation Bar</title>
 </head>
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="../../../asset/logo_perpus.svg" alt="Logo Perpustakaan" class="logo">
+            <img src="asset/logo_perpus.svg" alt="Logo Perpustakaan" class="logo">
         </div>
         <p class="perpus">Perpustakaan</p>
         <div class="nav_links">
@@ -27,12 +27,12 @@
         </div>
         <?php if ($_SESSION['role'] === 'Admin') { ?>
             <div class="user_profile">
-                <a href="../../admin/profil/profil.php"><img src="../../../asset/profil.svg" alt="Profil" class="user_profile"></a>
+                <a href="../../admin/profil/profil.php"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
             </div>
         <?php } ?>
         <?php if ($_SESSION['role'] === 'Pengguna') { ?>
             <div class="user_profile">
-                <a href="../../pengguna/profil/profil.php"><img src="../../../asset/profil.svg" alt="Profil" class="user_profile"></a>
+                <a href="../../pengguna/profil/profil.php"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
             </div>
         <?php } ?>
     </div>
