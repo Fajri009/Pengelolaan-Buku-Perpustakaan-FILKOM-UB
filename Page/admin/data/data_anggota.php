@@ -1,79 +1,55 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <link rel="stylesheet" href="Page/admin/data/data.css">
-    <title>Data Anggota Perpustakaan</title>
-    <style>
-        th:nth-child(8), td:nth-child(8) {
-            width: 200px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <form method="POST">
-            <h1 style="text-align: center">Data Anggota Perpustakaan</h1>
-            <button type="button" class="tambah" onclick="tambahForm()">Tambah Data Anggota</button>
-            <table>
-                <tbody>
-                    <tr class="kategori">
-                        <td>No</td>
-                        <td>Kode Anggota</td>
-                        <td>NIM</td>
-                        <td>Nama Lengkap</td>
-                        <td>Email</td>
-                        <td>Password</td>
-                        <td>Alamat</td>
-                        <td class="kategori-aksi">Aksi</td>
-                    </tr>
-                    <tr class="data">
-                        <td>1</td>
-                        <td>000000001</td>
-                        <td>215150200111037</td>
-                        <td>Muh Richo Abadinata</td>
-                        <td>muhrichoa@student.ub.ac.id</td>
-                        <td>1234567890</td>
-                        <td>Desa Mojolangu, Kec. Lowokwaru, Malang</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>2</td>
-                        <td>000000002</td>
-                        <td>213147168413132</td>
-                        <td>Fajri Rayrahman H</td>
-                        <td>fajri.harlan.fh@student.ub.ac.id</td>
-                        <td>12345</td>
-                        <td>Tangerang</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>3</td>
-                        <td>000000003</td>
-                        <td>27253r52242443</td>
-                        <td>Isya Almanda B</td>
-                        <td>isyaalmanda@student.ub.ac.id</td>
-                        <td>asdfghjkl</td>
-                        <td>Blitar</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </form>
-    </div>
-    
-    <div class="popup-form-container" id="tambahPopupForm">
+            <!DOCTYPE html>
+            <html>
+            <head>
+                <link rel="stylesheet" href="Page/admin/data/data.css">
+                <title>Data Anggota Perpustakaan</title>
+                <style>
+                    th:nth-child(8), td:nth-child(8) {
+                        width: 200px;
+                    }
+                </style>
+            </head>
+            <body>
+                <div class="container">
+                    <form method="POST">
+                        <h1 style="text-align: center">Data Anggota Perpustakaan</h1>
+                        <button type="button" class="tambah" onclick="tambahForm()">Tambah Data Anggota</button>
+                        <table>
+                            <tbody>
+                                <tr class="kategori">
+                                    <td>No</td>
+                                    <td>Kode Anggota</td>
+                                    <td>NIM</td>
+                                    <td>Nama Lengkap</td>
+                                    <td>Email</td>
+                                    <td>Password</td>
+                                    <td>Alamat</td>
+                                    <td class="kategori-aksi">Aksi</td>
+                                </tr>
+                                <?php foreach ($data as $row) { ?>
+                                    <tr class="data">
+                                        <td><?php echo $row['id_user']; ?></td>
+                                        <td><?php echo $row['kode_anggota']; ?></td>
+                                        <td><?php echo $row['nim']; ?></td>
+                                        <td><?php echo $row['fullname']; ?></td>
+                                        <td><?php echo $row['email']; ?></td>
+                                        <td><?php echo $row['password']; ?></td>
+                                        <td><?php echo $row['alamat']; ?></td>
+                                        <td class="aksi">
+                                            <button type="button" class="update" onclick="updateForm()">Update</button>
+                                            <button type="button" class="delete" onclick="">Delete</button>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </form>
+                </div>
+            
+                <div class="popup-form-container" id="tambahPopupForm">
         <div class="input-group">
             <h2>Tambah Data Anggota</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=tambah_anggota">
                 <div class="input-box">
                     <label for="kode_anggota">Kode Anggota :</label>
                     <input type="text" id="kode_anggota" name="kode_anggota" placeholder="Kode Anggota">
@@ -147,7 +123,8 @@
             </form>
         </div>
     </div>
-
-    <script src="Page/admin/data/popup.js"></script>
-</body>
-</html>
+            
+                <script src="Page/admin/data/popup.js"></script>
+            </body>
+            </html>
+            <?php

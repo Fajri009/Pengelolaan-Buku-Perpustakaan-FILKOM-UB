@@ -98,6 +98,11 @@ switch ($page) {
         $bookDataController = new DataBukuController();
         $bookDataController->delete($id);
         break;
+    case 'tambah_anggota':
+        require_once "controller/MemberDataController.php";
+        $memberDataController = new MemberDataController();
+        $memberDataController->tambah_anggota();
+        break;
     default:
         echo "404 Page Not Found";
         break;

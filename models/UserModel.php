@@ -25,6 +25,23 @@ class UserModel {
         }
     }
 
+    public function getAllData() {
+        $this->connectToDatabase();
+        $sql = "SELECT * FROM user WHERE role='Pengguna'";
+        $result = $this->conn->query($sql);
+
+        $data = [];
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                $data[] = $row;
+            }
+        }
+
+        $this->closeConnection();
+
+        return $data;
+    }
+
     public function createUser($fullname, $nim, $email, $password, $alamat) {
         $this->connectToDatabase();
 

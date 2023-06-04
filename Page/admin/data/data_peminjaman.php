@@ -28,7 +28,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <form method="POST">
             <h1 style="text-align: center">Data Peminjaman Buku</h1>
             <button type="button" class="tambah" style="width: 230px;" onclick="tambahForm()">Tambah Data Peminjaman Buku</button>
@@ -45,48 +45,41 @@
                         <td>Denda</td>
                         <td class="kategori-aksi">Aksi</td>
                     </tr>
-                    <tr class="data">
-                        <td>1</td>
-                        <td>Muh Richo Abadinata</td>
-                        <td>Pemrograman Website</td>
-                        <td>2 Mei 2023</td>
-                        <td>8 Mei 2023</td>
-                        <td>Baik</td>
-                        <td>Baik</td>
-                        <td>Rp 0,00</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>2</td>
-                        <td>Fajri Rayrahman H</td>
-                        <td>Jaringan Komputer</td>
-                        <td>9 Mei 2023</td>
-                        <td>13 Mei 2023</td>
-                        <td>Baik</td>
-                        <td>Rusak</td>
-                        <td>Rp 50.000,00</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>3</td>
-                        <td>Isya Almanda B</td>
-                        <td>Algoritma dan Struktur Data</td>
-                        <td>15 Mei 2023</td>
-                        <td>23 Mei 2023</td>
-                        <td>Baik</td>
-                        <td>Baik</td>
-                        <td>Rp 0,00</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
+                    <?php
+                    // Connect to the database
+                    require_once "config/koneksi.php";
+                    $conn = getConnection();
+
+                    // Fetch data from the database
+                    $sql = "SELECT * FROM pengembalian";
+                    $result = $conn->query($sql);
+
+                    if ($result->num_rows > 0) {
+                        $row_number = 1;
+                        while ($row = $result->fetch_assoc()) {
+                            echo '<tr class="data">';
+                            echo '<td>' . $row_number . '</td>';
+                            echo '<td>' . $row["nama_anggota"] . '</td>';
+                            echo '<td>' . $row["judul_buku"] . '</td>';
+                            echo '<td>' . $row["tanggal_pinjam"] . '</td>';
+                            echo '<td>' . $row["tanggal_kembali"] . '</td>';
+                            echo '<td>' . $row["kondisi"] . '</td>';
+                            echo '<td>' . $row["kondisi_akhir"] . '</td>';
+                            echo '<td>' . $row["denda"] . '</td>';
+                            echo '<td class="aksi">';
+                            echo '<button type="button" class="update" onclick="updateForm()">Update</button>';
+                            echo '<button type="button" class="delete" onclick="">Delete</button>';
+                            echo '</td>';
+                            echo '</tr>';
+                            $row_number++;
+                        }
+                    } else {
+                        echo '<tr><td colspan="9">No data available</td></tr>';
+                    }
+
+                    // Close the database connection
+                    $conn->close();
+                    ?>
                 </tbody>
             </table>
         </form>

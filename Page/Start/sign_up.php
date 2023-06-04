@@ -14,7 +14,7 @@
                 <input name="nim" type="int" placeholder="NIM">
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
-                <input name="text" type="alamat" placeholder="Alamat">
+                <input name="alamat" type="text" placeholder="Alamat">
                 <?php
                     if (isset($error_message)) {
                         echo '<p class="error">' . $error_message . '</p>';
