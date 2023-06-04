@@ -1,25 +1,11 @@
-<?php
-    require_once "../../../config/koneksi.php";
-
-    session_start();
-
-    if (!isset($_SESSION['role'])) {
-        header("Location: ../../start/sign_in.php");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="form_buku.css">
+    <link rel="stylesheet" href="Page/pengguna/form/form_buku.css">
     <title>Peminjaman Buku</title>
 </head>
 <body>
-    <div class="navigation-bar">
-        <?php include "../../navbar/navigation_bar.php"; ?>
-    </div>
-    <div class="popup-form-container">
+    <div class="container">
         <h1>Formulir Peminjaman Buku</h1>
         <div class="input-group">
             <form method="POST">

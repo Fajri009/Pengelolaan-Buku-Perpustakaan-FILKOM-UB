@@ -1,29 +1,29 @@
-<?php
-    require_once "../../../config/koneksi.php";
-
-    session_start();
-
-    if (!isset($_SESSION['role'])) {
-        header("Location: ../../start/sign_in.php");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="Page/pengguna/koleksi/koleksi.css">
     <title>Koleksi Buku</title>
 </head>
 <body>
-    <?php include "../../navbar/navigation_bar.php"; ?>
-    <div class="container">
-        <h1>Koleksi Buku</h1>
-        <form method="POST">
-            <div class="button-group">
-                <button type="submit" name="sign_in" class="button1">Logout</button>
-            </div>
-        </form>
+    <div class="searchContainer" id="searchContainer">
+        <input
+            type="text"
+            class="searchInput"
+            id="searchInput"
+            placeholder="Search by title or author"
+        />
+        <button class="searchButton" id="searchButton">Search</button>
     </div>
+
+    <div class="container" id="bookContainer">
+        <?php foreach ($books as $book) { ?>
+            <div class="book">
+                <h3><?php echo $book['title']; ?></h3>
+                <p><?php echo $book['author']; ?></p>
+                <!-- Add more book details as needed -->
+            </div>
+        <?php } ?>
+    </div>
+    <script src="Page/pengguna/koleksi/koleksi.js"></script>
 </body>
 </html>

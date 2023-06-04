@@ -1,24 +1,10 @@
-<?php
-    require_once "../../../config/koneksi.php";
-
-    session_start();
-
-    if (!isset($_SESSION['role'])) {
-        header("Locaiton: ../../start/sign_in.php");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="riwayat.css">
+    <link rel="stylesheet" href="Page/pengguna/riwayat/riwayat.css">
     <title>Peminjaman Buku</title>
 </head>
 <body>
-    <div class="navigation-bar">
-        <?php include "../../navbar/navigation_bar.php"; ?>
-    </div>
     <div class="container">
         <h1>Riwayat Peminjaman Buku</h1>
         <table>

@@ -1,18 +1,7 @@
-<?php
-    require_once "../../../config/koneksi.php";
-
-    session_start();
-
-    if (!isset($_SESSION['role'])) {
-        header("Locaiton: ../../start/sign_in.php");
-        exit();
-    }
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="data.css">
+    <link rel="stylesheet" href="Page/admin/data/data.css">
     <title>Data Buku Perpustakaan</title>
     <style>
         th:nth-child(1), td:nth-child(1) {
@@ -39,9 +28,6 @@
     </style>
 </head>
 <body>
-    <div class="navigation-bar">
-        <?php include "../../navbar/navigation_bar.php"; ?>
-    </div>
     <div class="container">
         <form method="POST">
             <h1 style="text-align: center">Data Peminjaman Buku</h1>
@@ -184,6 +170,6 @@
         </div>
     </div>
 
-    <script src="popup.js"></script>
+    <script src="Page/admin/data/popup.js"></script>
 </body>
 </html>

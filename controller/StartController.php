@@ -16,7 +16,11 @@ class StartController {
 
             if ($user) {
                 $_SESSION['role'] = $user['role'];
-                header("Location: index.php?page=home");
+                if ($_SESSION['role'] === 'Pengguna'){
+                    header("Location: index.php?page=home");
+                }else if ($_SESSION['role'] === 'Admin'){
+                    header("Location: index.php?page=home_admin");
+                }
                 exit();
             } else {
                 $error_message = "Username atau Password Salah";

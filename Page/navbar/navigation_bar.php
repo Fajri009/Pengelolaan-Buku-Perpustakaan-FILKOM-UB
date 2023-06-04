@@ -12,27 +12,27 @@
         <p class="perpus">Perpustakaan</p>
         <div class="nav_links">
             <?php if ($_SESSION['role'] === 'Admin') { ?>
-                <a href="../../admin/dashboard/dashboard.php">Beranda</a>
-                <a href="../../admin/data/data_buku.php">Data Buku</a>
-                <a href="../../admin/data/data_anggota.php">Data Anggota</a>
-                <a href="../../admin/data/data_peminjaman.php">Data Peminjaman</a>
+                <a href="index.php?page=home_admin">Beranda</a>
+                <a href="index.php?page=data_buku">Data Buku</a>
+                <a href="index.php?page=data_anggota">Data Anggota</a>
+                <a href="index.php?page=data_peminjaman">Data Peminjaman</a>
             <?php } ?>
             <?php if ($_SESSION['role'] === 'Pengguna') { ?>
-                <a href="../../pengguna/home/homepage.php">Beranda</a>
-                <a href="../../pengguna/koleksi/koleksi.php">Koleksi Buku</a>
-                <a href="../../pengguna/form/peminjaman.php">Peminjaman Buku</a>
-                <a href="../../pengguna/form/pengembalian.php">Pengembalian Buku</a>
-                <a href="../../pengguna/riwayat/riwayat.php">Riwayat</a>
+                <a href="index.php?page=home">Beranda</a>
+                <a href="index.php?page=koleksi_buku">Koleksi Buku</a>
+                <a href="index.php?page=peminjaman_buku">Peminjaman Buku</a>
+                <a href="index.php?page=pengembalian_buku">Pengembalian Buku</a>
+                <a href="index.php?page=riwayat">Riwayat</a>
             <?php } ?>
         </div>
         <?php if ($_SESSION['role'] === 'Admin') { ?>
             <div class="user_profile">
-                <a href="../../admin/profil/profil.php"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
+                <a href="index.php?page=profil_admin"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
             </div>
         <?php } ?>
         <?php if ($_SESSION['role'] === 'Pengguna') { ?>
             <div class="user_profile">
-                <a href="../../pengguna/profil/profil.php"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
+                <a href="index.php?page=profil_pengguna"><img src="asset/profil.svg" alt="Profil" class="user_profile"></a>
             </div>
         <?php } ?>
     </div>

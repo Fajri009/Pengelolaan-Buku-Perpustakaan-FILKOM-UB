@@ -21,5 +21,6 @@
             <button class="next">&gt;</button>
         </div>
     </div>
+    <script src="Page/pengguna/home/home.js"></script>
 </body>
 </html>
