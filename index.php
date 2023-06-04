@@ -77,6 +77,11 @@ switch ($page) {
         $logoutController = new LogoutController();
         $logoutController->index();
         break;
+    case 'tambah_buku':
+        require_once "controller/BookDataController.php";
+        $bookDataController = new DataBukuController();
+        $bookDataController->addBook();
+        break;
     default:
         echo "404 Page Not Found";
         break;

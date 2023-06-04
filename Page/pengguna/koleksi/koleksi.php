@@ -18,8 +18,8 @@
     <div class="container" id="bookContainer">
         <?php foreach ($books as $book) { ?>
             <div class="book">
-                <h3><?php echo $book['title']; ?></h3>
-                <p><?php echo $book['author']; ?></p>
+                <h3><?php echo $book['judul_buku']; ?></h3>
+                <p><?php echo $book['pengarang']; ?></p>
                 <!-- Add more book details as needed -->
             </div>
         <?php } ?>

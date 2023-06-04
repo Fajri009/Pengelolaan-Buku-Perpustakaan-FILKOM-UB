@@ -10,7 +10,7 @@
     </style>
 </head>
 <body>
-    <div class="container">
+<div class="container">
         <form method="POST">
             <h1 style="text-align: center">Data Buku Perpustakaan</h1>
             <button type="button" class="tambah" onclick="tambahForm()">Tambah Data Buku</button>
@@ -26,45 +26,21 @@
                         <td>Jumlah Buku</td>
                         <td class="kategori-aksi">Aksi</td>
                     </tr>
-                    <tr class="data">
-                        <td>1</td>
-                        <td>Pengantar TIK</td>
-                        <td>Bagaskara</td>
-                        <td>Gramedia</td>
-                        <td>7</td>
-                        <td>3</td>
-                        <td>10</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>2</td>
-                        <td>Algoritma & Pemrograman</td>
-                        <td>Purba Daru K</td>
-                        <td>Intan Pariwara</td>
-                        <td>10</td>
-                        <td>2</td>
-                        <td>12</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
-                    <tr class="data">
-                        <td>3</td>
-                        <td>Pemrograman Bahasa C++</td>
-                        <td>Steve Jobs</td>
-                        <td>Gramedia</td>
-                        <td>15</td>
-                        <td>5</td>
-                        <td>20</td>
-                        <td class="aksi">
-                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                            <button type="button" class="delete" onclick="">Delete</button>
-                        </td>
-                    </tr>
+                    <?php foreach ($books as $row) { ?>
+                        <tr class="data">
+                            <td><?php echo $row['id']; ?></td>
+                            <td><?php echo $row['judul_buku']; ?></td>
+                            <td><?php echo $row['pengarang']; ?></td>
+                            <td><?php echo $row['penerbit']; ?></td>
+                            <td><?php echo $row['buku_baik']; ?></td>
+                            <td><?php echo $row['buku_rusak']; ?></td>
+                            <td><?php echo $row['jumlah_buku']; ?></td>
+                            <td class="aksi">
+                                <button type="button" class="update" onclick="updateForm()">Update</button>
+                                <button type="button" class="delete" onclick="">Delete</button>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
         </form>
@@ -73,7 +49,7 @@
     <div class="popup-form-container" id="tambahPopupForm">
         <div class="input-group">
             <h2>Tambah Data Buku</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=tambah_buku" enctype="multipart/form-data">
                 <div class="input-box">
                     <label for="judul_buku">Judul Buku :</label>
                     <input type="text" id="judul_buku" name="judul_buku" placeholder="Judul Buku">
@@ -96,7 +72,7 @@
 
                 <div class="input-box">
                     <label for="rusak">Banyak Buku Rusak :</label>
-                    <input type="number" id="rusak" name="rusak" placeholder="Banyak Buku Rusa">
+                    <input type="number" id="rusak" name="rusak" placeholder="Banyak Buku Rusak">
                 </div>
 
                 <div class="input-box">
@@ -106,7 +82,7 @@
 
                 <div class="input-box">
                     <label for="gambar_buku">Gambar Buku :</label>
-                    <input type="file" id="gambar_buku" name="gambar_buku" accept="image/png, image/jpeg, image/jpg">
+                    <input type="file" name="gambar_buku" accept="image/*" required />
                 </div>
 
                 <button type="submit" name="btn-popup" class="btn-popup tambah-popup">Tambah</button>
