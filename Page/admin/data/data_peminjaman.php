@@ -44,7 +44,8 @@
     </div>
     <div class="container">
         <form method="POST">
-            <h1 style="text-align: center">Data Buku Perpustakaan</h1>
+            <h1 style="text-align: center">Data Peminjaman Buku</h1>
+            <button type="button" class="tambah" style="width: 230px;" onclick="tambahForm()">Tambah Data Peminjaman Buku</button>
             <table>
                 <tbody>
                     <tr class="kategori">
@@ -68,7 +69,7 @@
                         <td>Baik</td>
                         <td>Rp 0,00</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
@@ -82,7 +83,7 @@
                         <td>Rusak</td>
                         <td>Rp 50.000,00</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
@@ -96,12 +97,93 @@
                         <td>Baik</td>
                         <td>Rp 0,00</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
                 </tbody>
             </table>
+        </form>
     </div>
+
+    <div class="popup-form-container" id="tambahPopupForm">
+        <div class="input-group">
+            <h2>Tambah Data Peminjaman Buku</h1>
+            <form method="POST">
+                <div class="input-box">
+                    <label for="nama_anggota">Nama Anggota :</label>
+                    <input type="text" id="nama_anggota" name="nama_anggota" placeholder="Nama Anggota">
+                </div>
+                
+                <div class="input-box">
+                    <label for="judul_buku">Judul Buku :</label>
+                    <input type="text" id="judul_buku" name="judul_buku" placeholder="Judul Buku">
+                </div>
+
+                <div class="input-box">
+                    <label for="tanggal_peminjaman">Tanggal Peminjaman :</label>
+                    <input type="date" id="tanggal_peminjaman" name="tanggal_peminjaman" placeholder="Tanggal Peminjaman">
+                </div>
+
+                <div class="input-box">
+                    <label for="tanggal_pengembalian">Tanggal Pengembalian :</label>
+                    <input type="date" id="tanggal_pengembalian" name="tanggal_pengembalian" placeholder="Tanggal Pengembalian">
+                </div>
+
+                <div class="input-box">
+                    <label for="kondisi_dipinjam">Kondisi Buku Dipinjam :</label>
+                    <input type="text" id="kondisi_dipinjam" name="kondisi_dipinjam" placeholder="Kondisi Buku Dipinjam">
+                </div>
+
+                <div class="input-box">
+                    <label for="kondisi_dikembalikan">Kondisi Buku Dikembalikan :</label>
+                    <input type="number" id="kondisi_dikembalikan" name="kondisi_dikembalikan" placeholder="Kondisi Buku Dikembalikan">
+                </div>
+
+                <button type="submit" name="btn-popup" class="btn-popup tambah-popup">Tambah</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="popup-form-container" id="updatePopupForm">
+        <div class="input-group">
+            <h2>Update Data Peminjaman Buku</h1>
+            <form method="POST">
+                <div class="input-box">
+                    <label for="nama_anggota">Nama Anggota :</label>
+                    <input type="text" id="nama_anggota" name="nama_anggota" placeholder="Data">
+                </div>
+                
+                <div class="input-box">
+                    <label for="judul_buku">Judul Buku :</label>
+                    <input type="text" id="judul_buku" name="judul_buku" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="tanggal_peminjaman">Tanggal Peminjaman :</label>
+                    <input type="date" id="tanggal_peminjaman" name="tanggal_peminjaman" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="tanggal_pengembalian">Tanggal Pengembalian :</label>
+                    <input type="date" id="tanggal_pengembalian" name="tanggal_pengembalian" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="kondisi_dipinjam">Kondisi Buku Dipinjam :</label>
+                    <input type="text" id="kondisi_dipinjam" name="kondisi_dipinjam" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="kondisi_dikembalikan">Kondisi Buku Dikembalikan :</label>
+                    <input type="number" id="kondisi_dikembalikan" name="kondisi_dikembalikan" placeholder="Data">
+                </div>
+
+                <button type="submit" name="btn-popup" class="btn-popup update-popup">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>

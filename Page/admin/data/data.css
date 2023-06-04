@@ -9,15 +9,28 @@ body {
 }
 
 .container {
-    display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin-top: 30px;
+    margin: 30px 40px 0 40px;
 }
 
 h1 {
     margin-bottom: 30px;
+}
+
+.tambah {
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 10px;
+    background-color: #86d3f9;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.tambah:hover {
+    background-color: #7abddf;
 }
 
 table {
@@ -79,16 +92,47 @@ th, td {
     z-index: 9999;
 }
 
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.popup-form-container.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: slideDown 0.5s ease; 
+}
+
+.popup-form-container.hide {
+    animation: slideUp 0.5s ease; 
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(0); 
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
 .input-group {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     margin-bottom: 10px;
     background-color: #fff;
     border-radius: 20px;
     padding: 10px;
+    padding-bottom: 30px;
     width: 340px;
+    text-align: center;
 }
 
 .input-group label {
@@ -103,16 +147,30 @@ th, td {
     margin-bottom: 20px;
 }
 
-.submit {
-    margin-top: 10px;
-    background-color: #2490c8;
+
+.btn-popup {
+    margin-top: 20px;
     color: white;
     cursor: pointer;
     border: none;
     padding: 10px 35px;
     border-radius: 10px;
+    margin: 0 auto;
+    display: block; 
 }
 
-.submit:hover {
+.tambah-popup {
+    background-color: #2490c8;
+}
+
+.tambah-popup:hover {
     background-color: #1c719c;
+}
+
+.update-popup {
+    background-color: #00a65a;
+}
+
+.update-popup:hover {
+    background-color: #018549;
 }

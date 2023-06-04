@@ -27,6 +27,7 @@
     <div class="container">
         <form method="POST">
             <h1 style="text-align: center">Data Anggota Perpustakaan</h1>
+            <button type="button" class="tambah" onclick="tambahForm()">Tambah Data Anggota</button>
             <table>
                 <tbody>
                     <tr class="kategori">
@@ -48,7 +49,7 @@
                         <td>1234567890</td>
                         <td>Desa Mojolangu, Kec. Lowokwaru, Malang</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="showForm()">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
@@ -61,7 +62,7 @@
                         <td>12345</td>
                         <td>Tangerang</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="showForm()">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
@@ -74,7 +75,7 @@
                         <td>asdfghjkl</td>
                         <td>Blitar</td>
                         <td class="aksi">
-                            <button type="button" class="update" onclick="">Update</button>
+                            <button type="button" class="update" onclick="updateForm()">Update</button>
                             <button type="button" class="delete" onclick="">Delete</button>
                         </td>
                     </tr>
@@ -82,52 +83,85 @@
             </table>
         </form>
     </div>
-    <div class="popup-form-container" id="popupFormContainer">
+    
+    <div class="popup-form-container" id="tambahPopupForm">
         <div class="input-group">
-            <h2>Formulir Peminjaman Buku</h1>
+            <h2>Tambah Data Anggota</h1>
             <form method="POST">
                 <div class="input-box">
-                    <label for="nama_anggota">Nama Anggota :</label>
-                    <input type="text" id="nama_anggota" name="nama_anggota" placeholder="Nama Lengkap">
+                    <label for="kode_anggota">Kode Anggota :</label>
+                    <input type="text" id="kode_anggota" name="kode_anggota" placeholder="Kode Anggota">
                 </div>
                 
                 <div class="input-box">
-                    <label for="judul_buku">Judul Buku :</label>
-                    <input type="text" id="judul_buku" name="judul_buku" placeholder="Nama Judul Buku">
+                    <label for="nim">NIM :</label>
+                    <input type="text" id="nim" name="nim" placeholder="NIM">
                 </div>
 
                 <div class="input-box">
-                    <label for="tanggal">Tanggal Peminjaman :</label>
-                    <input type="date" id="tanggal" name="tanggal_peminjaman">
+                    <label for="fullname">Nama Lengkap :</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nama Lengkap">
                 </div>
 
                 <div class="input-box">
-                    <label for="kondisi">Kondisi Buku :</label>
-                    <select id="kondisi" name="kondisi_buku">
-                        <option value="" disabled selected>Pilih salah satu</option>
-                        <option value="baik">Baik</option>
-                        <option value="buruk">Buruk</option>
-                    </select>
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Email">
                 </div>
 
-                <button type="submit" name="submit" class="submit">Submit</button>
+                <div class="input-box">
+                    <label for="password">Password :</label>
+                    <input type="text" id="password" name="password" placeholder="Password">
+                </div>
+
+                <div class="input-box">
+                    <label for="alamat">Alamat :</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Alamat">
+                </div>
+
+                <button type="submit" name="btn-popup" class="btn-popup tambah-popup">Tambah</button>
             </form>
-        </div>>
         </div>
     </div>
 
-    <script>
-        function showForm() {
-            var popupFormContainer = document.getElementById("popupFormContainer");
-            popupFormContainer.style.display = "block";
-        }
+    <div class="popup-form-container" id="updatePopupForm">
+        <div class="input-group">
+            <h2>Update Data Anggota</h1>
+            <form method="POST">
+                <div class="input-box">
+                    <label for="kode_anggota">Kode Anggota :</label>
+                    <input type="text" id="kode_anggota" name="kode_anggota" placeholder="Data">
+                </div>
+                
+                <div class="input-box">
+                    <label for="nim">NIM :</label>
+                    <input type="text" id="nim" name="nim" placeholder="Data">
+                </div>
 
-        var popupFormContainer = document.getElementById("popupFormContainer");
-        popupFormContainer.addEventListener("click", function(event) {
-            if (event.target === this) {
-                this.style.display = "none";
-            }
-        });
-    </script>
+                <div class="input-box">
+                    <label for="fullname">Nama Lengkap :</label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="email">Email :</label>
+                    <input type="email" id="email" name="email" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="password">Password :</label>
+                    <input type="text" id="password" name="password" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="alamat">Alamat :</label>
+                    <input type="text" id="alamat" name="alamat" placeholder="Data">
+                </div>
+
+                <button type="submit" name="btn-popup" class="btn-popup update-popup">Update</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
