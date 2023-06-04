@@ -52,6 +52,11 @@ body {
 
 .btn-peminjaman {
     background-color: #256d85;
+    padding: 45px 50px 0 50px;
+}
+
+.logo-peminjaman {
+    width: 110px;
 }
 
 .btn-peminjaman:hover {

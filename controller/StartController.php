@@ -41,12 +41,16 @@ class StartController {
             $email = $_POST['email'];
             $password = $_POST['password'];
             
-            require_once "models/UserModel.php";
-            $userModel = new UserModel();
-            $userModel->createUser($fullname, $nim, $email, $password);
+            if (empty($fullname) || empty($nim) || empty($email) || empty($password)) {
+                $error_message = "Isi data kosong terlebih dahulu";
+            } else {
+                require_once "models/UserModel.php";
+                $userModel = new UserModel();
+                $userModel->createUser($fullname, $nim, $email, $password);
 
-            header("Location: index.php?page=sign_in");
-            exit();
+                header("Location: index.php?page=sign_in");
+                exit();
+            }
         }
 
         if (isset($_POST['sign_in'])) {

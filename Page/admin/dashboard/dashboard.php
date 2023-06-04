@@ -3,10 +3,10 @@
 
     session_start();
 
-    if (!isset($_SESSION['role'])) {
-        header("Location: ../..start/sign_in.php");
-        exit();
-    }
+    // if (!isset($_SESSION['role'])) {
+    //     header("Location: start/sign_in.php");
+    //     exit();
+    // }
 
     if (isset($_POST['sign_in'])) {
         header("Location: start/logout.php");
@@ -32,8 +32,8 @@
             <div>Anggota</div>
         </a>
         <a href="../data/data_peminjaman.php" class="btn btn-peminjaman">
-            <img src="../../../asset/dashboard-logo/anggota.svg" alt="logo-peminjaman" class="logo-peminjaman">
-            <div>Peminjaman</div>
+            <img src="../../../asset/dashboard-logo/peminjaman.svg" alt="logo-peminjaman" class="logo-peminjaman">
+            <div style="margin-top: 24px;">Peminjaman</div>
         </a>
     </div>
     <div class="footer">

@@ -14,6 +14,11 @@
                 <input name="nim" type="int" placeholder="NIM">
                 <input name="email" type="email" placeholder="Email">
                 <input name="password" type="password" placeholder="Password">
+                <?php
+                    if (isset($error_message)) {
+                        echo '<p class="error">' . $error_message . '</p>';
+                    }
+                ?>
                 <div class="button-group">
                     <button type="submit" name="sign_up" class="button1">Sign Up</button>
                     <button type="submit" name="sign_in" class="button2">Sudah Mempunyai Akun? Sign In</button>
