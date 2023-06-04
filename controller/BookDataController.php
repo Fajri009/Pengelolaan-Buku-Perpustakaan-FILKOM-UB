@@ -112,4 +112,16 @@ class DataBukuController {
         $conn->close();
         header("Location: index.php?page=data_buku");
     }
+
+    public function delete($id){
+        require_once "config/koneksi.php";
+        $koneksi = getConnection();
+
+        $query = "DELETE FROM books WHERE id = $id";
+
+        if ($koneksi->query($query)) {
+            header("Location: index.php?page=data_buku");
+            exit();
+        }
+    }
 }

@@ -6,6 +6,12 @@ if (isset($_GET['page'])) {
     $page = 'sign_in';
 }
 
+if(isset($_GET['id'])){
+    $id = $_GET['id'];
+}else{
+    $id = 0;
+}
+
 switch ($page) {
     case 'home':
         require_once "controller/HomeController.php";
@@ -86,6 +92,11 @@ switch ($page) {
         require_once "controller/BookDataController.php";
         $bookDataController = new DataBukuController();
         $bookDataController->updateBook();
+        break;
+    case 'delete_buku':
+        require_once "controller/BookDataController.php";
+        $bookDataController = new DataBukuController();
+        $bookDataController->delete($id);
         break;
     default:
         echo "404 Page Not Found";

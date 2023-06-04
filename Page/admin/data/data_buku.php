@@ -37,7 +37,7 @@
                             <td><?php echo $row['jumlah_buku']; ?></td>
                             <td class="aksi">
                                 <button type="button" class="update" onclick="updateForm()">Update</button>
-                                <button type="button" class="delete" onclick="">Delete</button>
+                                <button type="button" class="delete" onclick="window.location.href = 'index.php?page=delete_buku&id=<?php echo $row['id']; ?>';">Delete</button>
                             </td>
                         </tr>
                     <?php } ?>
