@@ -104,6 +104,11 @@
                     <input type="number" id="jumlah_buku" name="jumlah_buku" placeholder="Jumlah Buku">
                 </div>
 
+                <div class="input-box">
+                    <label for="gambar_buku">Gambar Buku :</label>
+                    <input type="file" id="gambar_buku" name="gambar_buku" accept="image/png, image/jpeg, image/jpg">
+                </div>
+
                 <button type="submit" name="btn-popup" class="btn-popup tambah-popup">Tambah</button>
             </form>
         </div>
@@ -141,6 +146,11 @@
                 <div class="input-box">
                     <label for="jumlah_buku">Jumlah Buku :</label>
                     <input type="number" id="jumlah_buku" name="jumlah_buku" placeholder="Data">
+                </div>
+
+                <div class="input-box">
+                    <label for="gambar_buku">Gambar Buku :</label>
+                    <input type="file" id="gambar_buku" name="gambar_buku" accept="image/png, image/jpeg, image/jpg">
                 </div>
 
                 <button type="submit" name="btn-popup" class="btn-popup update-popup">Update</button>
