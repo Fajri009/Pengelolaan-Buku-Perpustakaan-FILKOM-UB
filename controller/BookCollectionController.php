@@ -13,7 +13,6 @@ class BookCollectionController {
         $bookModel = new BookModel();
         $books = $bookModel->getBooks();
         $bookModel->closeConnection();
-
         include "Page/navbar/navigation_bar.php";
         include "Page/pengguna/koleksi/koleksi.php";
     }

@@ -82,6 +82,11 @@ switch ($page) {
         $bookDataController = new DataBukuController();
         $bookDataController->addBook();
         break;
+    case 'update_buku':
+        require_once "controller/BookDataController.php";
+        $bookDataController = new DataBukuController();
+        $bookDataController->updateBook();
+        break;
     default:
         echo "404 Page Not Found";
         break;

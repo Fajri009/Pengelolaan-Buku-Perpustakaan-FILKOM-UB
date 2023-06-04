@@ -16,6 +16,10 @@ class StartController {
 
             if ($user) {
                 $_SESSION['role'] = $user['role'];
+                $_SESSION['nim'] = $user['nim'];
+                $_SESSION['email'] = $user['email'];
+                $_SESSION['password'] = $user['password'];
+                $_SESSION['alamat'] = $user['alamat'];
                 if ($_SESSION['role'] === 'Pengguna'){
                     header("Location: index.php?page=home");
                 }else if ($_SESSION['role'] === 'Admin'){
@@ -44,13 +48,14 @@ class StartController {
             $nim = $_POST['nim'];
             $email = $_POST['email'];
             $password = $_POST['password'];
+            $alamat = $_POST['alamat'];
             
-            if (empty($fullname) || empty($nim) || empty($email) || empty($password)) {
+            if (empty($fullname) || empty($nim) || empty($email) || empty($password) || empty($alamat)) {
                 $error_message = "Isi data kosong terlebih dahulu";
             } else {
                 require_once "models/UserModel.php";
                 $userModel = new UserModel();
-                $userModel->createUser($fullname, $nim, $email, $password);
+                $userModel->createUser($fullname, $nim, $email, $password, $alamat);
 
                 header("Location: index.php?page=sign_in");
                 exit();

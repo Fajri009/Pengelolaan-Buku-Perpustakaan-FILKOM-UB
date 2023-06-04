@@ -1,4 +1,4 @@
-fetch("book.php")
+fetch("BookDataController.php")
   .then((response) => response.json())
   .then((data) => {
     renderBooks(data);
@@ -17,13 +17,13 @@ function renderBooks(booksArray) {
 
     const imageElement = document.createElement("img");
     imageElement.src = book.image_path;
-    imageElement.alt = book.title;
+    imageElement.alt = book.judul_buku;
 
     const titleElement = document.createElement("div");
-    titleElement.textContent = book.title;
+    titleElement.textContent = book.judul_buku;
 
     const authorElement = document.createElement("div");
-    authorElement.textContent = `by ${book.author}`;
+    authorElement.textContent = `by ${book.pengarang}`;
 
     bookElement.appendChild(imageElement);
     bookElement.appendChild(titleElement);

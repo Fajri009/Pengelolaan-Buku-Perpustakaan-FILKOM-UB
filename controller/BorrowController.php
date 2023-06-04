@@ -10,11 +10,16 @@ class BorrowController {
         }
 
         if (isset($_POST['submit'])) {
-            // Process the form data and perform necessary actions
-            // ...
+            require_once "config/koneksi.php";
+            $conn = getConnection();
+            $namaAnggota = $_POST['nama_anggota'];
+            $judulBuku = $_POST['judul_buku'];
+            $tanggalPeminjaman = $_POST['tanggal_peminjaman'];
+            $kondisiBuku = $_POST['kondisi_buku'];
 
-            // Redirect to a success page or display a success message
-            // ...
+            $sql = "INSERT INTO peminjaman (nama_anggota, judul_buku, tanggal_pinjam, kondisi_buku)
+            VALUES ('$namaAnggota', '$judulBuku', '$tanggalPeminjaman', '$kondisiBuku')";
+            $conn->query($sql);
         }
 
         // Load the view file

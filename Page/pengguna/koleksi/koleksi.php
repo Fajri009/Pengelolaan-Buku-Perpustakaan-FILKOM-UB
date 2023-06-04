@@ -18,9 +18,10 @@
     <div class="container" id="bookContainer">
         <?php foreach ($books as $book) { ?>
             <div class="book">
+                <?php $imagePath = $book['image_path'] ?>
+                <?echo "<img src=\"$imagePath\" alt=\"Book Image\" />";?>
                 <h3><?php echo $book['judul_buku']; ?></h3>
                 <p><?php echo $book['pengarang']; ?></p>
-                <!-- Add more book details as needed -->
             </div>
         <?php } ?>
     </div>

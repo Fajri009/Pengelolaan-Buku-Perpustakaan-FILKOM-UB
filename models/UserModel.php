@@ -7,6 +7,7 @@ class UserModel {
     }
 
     private function connectToDatabase() {
+        require_once "config/koneksi.php";
         $this->conn = getConnection();
     }
 
@@ -24,10 +25,10 @@ class UserModel {
         }
     }
 
-    public function createUser($fullname, $nim, $email, $password) {
+    public function createUser($fullname, $nim, $email, $password, $alamat) {
         $this->connectToDatabase();
 
-        $query = "INSERT INTO user (fullname, nim, email, password, role) VALUES ('$fullname', '$nim', '$email', '$password', 'Pengguna')";
+        $query = "INSERT INTO user (fullname, nim, email, password, role, alamat) VALUES ('$fullname', '$nim', '$email', '$password', 'Pengguna', '$alamat')";
         mysqli_query($this->conn, $query);
     }
 

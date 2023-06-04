@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,11 +11,11 @@
                 <img src="asset/profil.svg" alt="profil" class="profil">
                 <h2>Profil Saya</h2>
                 <p>Kode Anggota : 412413423</p>
-                <p>NIM : 215150200111037</p>
-                <p>Nama Lengkap : Muhammad Richo Abadinata</p>
-                <p>Email : richo@ub.ac.id</p>
-                <p>Password : 12345678</p>
-                <p>Alamat : Desa Mojolangu, Kec. Lowokwaru, Malang</p>
+                <p>NIM : <?php echo $user['nim']; ?></p>
+                <p>Nama Lengkap : <?php echo $user['fullname']; ?></p>
+                <p>Email : <?php echo $user['email']; ?></p>
+                <p>Password : <?php echo $user['password']; ?></p>
+                <p>Alamat : <?php echo $user['alamat']; ?></p>
                 <button type="submit" name="logout" class="logout">Logout</button>
             </form>
         </div>

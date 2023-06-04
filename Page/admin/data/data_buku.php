@@ -93,7 +93,7 @@
     <div class="popup-form-container" id="updatePopupForm">
         <div class="input-group">
             <h2>Update Data Buku</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=update_buku" enctype="multipart/form-data">
             <div class="input-box">
                     <label for="judul_buku">Judul Buku :</label>
                     <input type="text" id="judul_buku" name="judul_buku" placeholder="Data">

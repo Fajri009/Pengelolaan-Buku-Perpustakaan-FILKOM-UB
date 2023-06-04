@@ -13,6 +13,11 @@ class ProfileAdminController {
             exit();
         }
 
+        include "models/UserModel.php";
+        $userModel = new UserModel();
+        $user = $userModel->getUserByEmailAndPassword($_SESSION['email'], $_SESSION['password']);
+        $userModel->closeConnection();
+
         // Load the view file
         include "Page/navbar/navigation_bar.php";
         include "Page/admin/profil/profil.php";
@@ -31,6 +36,11 @@ class ProfileController {
             header("Location: index.php?page=sign_out");
             exit();
         }
+
+        include "models/UserModel.php";
+        $userModel = new UserModel();
+        $user = $userModel->getUserByEmailAndPassword($_SESSION['email'], $_SESSION['password']);
+        $userModel->closeConnection();
 
         // Load the view file
         include "Page/navbar/navigation_bar.php";

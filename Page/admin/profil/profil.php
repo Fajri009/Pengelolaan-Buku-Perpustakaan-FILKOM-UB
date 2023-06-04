@@ -10,9 +10,9 @@
             <form method="POST">
                 <img src="asset/profil.svg" alt="profil" class="profil">
                 <h2>Profil Saya</h2>
-                <p>Nama Lengkap : Administor</p>
-                <p>Email : admin@ub.ac.id</p>
-                <p>Password : admin123</p>
+                <p>Nama Lengkap : <?php echo $user['fullname']; ?></p>
+                <p>Email : <?php echo $user['email']; ?></p>
+                <p>Password : <?php echo $user['password']; ?></p>
                 <button type="submit" name="logout" class="logout">Logout</button>
             </form>
         </div>
