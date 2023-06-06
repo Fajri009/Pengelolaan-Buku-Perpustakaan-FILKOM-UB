@@ -101,27 +101,27 @@
                 
                 <div class="input-box">
                     <label for="pengarang">Pengarang :</label>
-                    <input type="text" id="pengarang" name="pengarang" placeholder="Data">
+                    <input type="text" id="pengarang" name="pengarang" value="<?php echo $row['pengarang']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="penerbit">Penerbit :</label>
-                    <input type="text" id="penerbit" name="penerbit" placeholder="Data">
+                    <input type="text" id="penerbit" name="penerbit" value="<?php echo $row['penerbit']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="baik">Banyak Buku Baik :</label>
-                    <input type="number" id="baik" name="baik" placeholder="Data">
+                    <input type="number" id="baik" name="baik" value="<?php echo $row['buku_baik']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="rusak">Banyak Buku Rusak :</label>
-                    <input type="number" id="rusak" name="rusak" placeholder="Data">
+                    <input type="number" id="rusak" name="rusak" value="<?php echo $row['buku_rusak']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="jumlah_buku">Jumlah Buku :</label>
-                    <input type="number" id="jumlah_buku" name="jumlah_buku" placeholder="Data">
+                    <input type="number" id="jumlah_buku" name="jumlah_buku" value="<?php echo $row['jumlah_buku']; ?>">
                 </div>
 
                 <div class="input-box">

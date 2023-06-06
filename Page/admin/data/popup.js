@@ -14,10 +14,32 @@ tambahPopupForm.addEventListener("click", function (event) {
   }
 });
 
-function updateForm(userId) {
+function updateForm(rowData) {
   var updatePopupForm = document.getElementById("updatePopupForm");
   updatePopupForm.classList.add("show");
   updatePopupForm.classList.remove("hide");
+
+  var namaAnggotaInput = document.getElementById("nama_anggota");
+  var judulBukuInput = document.getElementById("judul_buku");
+  var tanggalPeminjamanInput = document.getElementById("tanggal_peminjaman");
+  var tanggalPengembalianInput = document.getElementById(
+    "tanggal_pengembalian"
+  );
+  var kondisiDipinjamInput = document.getElementById("kondisi_dipinjam");
+  var kondisiDikembalikanInput = document.getElementById(
+    "kondisi_dikembalikan"
+  );
+
+  // Set the values of the form fields
+  namaAnggotaInput.value = rowData.nama_anggota;
+  judulBukuInput.value = rowData.judul_buku;
+  tanggalPeminjamanInput.value = rowData.tanggal_pinjam;
+  tanggalPengembalianInput.value = rowData.tanggal_kembali;
+  kondisiDipinjamInput.value = rowData.kondisi;
+  kondisiDikembalikanInput.value = rowData.kondisi_akhir;
+
+  // Show the update popup form
+  document.getElementById("updatePopupForm").style.display = "block";
 }
 
 var updatePopupForm = document.getElementById("updatePopupForm");

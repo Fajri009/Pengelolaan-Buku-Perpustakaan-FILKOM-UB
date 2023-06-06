@@ -1,4 +1,4 @@
-            <!DOCTYPE html>
+<!DOCTYPE html>
             <html>
             <head>
                 <link rel="stylesheet" href="Page/admin/data/data.css">
@@ -91,32 +91,32 @@
             <form method="POST" action="index.php?page=update_anggota">
                 <div class="input-box">
                     <label for="kode_anggota">Kode Anggota :</label>
-                    <input type="text" id="kode_anggota" name="kode_anggota" placeholder="Data">
+                    <input type="text" id="kode_anggota" name="kode_anggota" value="<?php echo $row['kode_anggota']; ?>">
                 </div>
                 
                 <div class="input-box">
                     <label for="nim">NIM :</label>
-                    <input type="text" id="nim" name="nim" placeholder="Data">
+                    <input type="text" id="nim" name="nim" value="<?php echo $row['nim']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="fullname">Nama Lengkap :</label>
-                    <input type="text" id="fullname" name="fullname" placeholder="Data">
+                    <input type="text" id="fullname" name="fullname" value="<?php echo $row['fullname']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="email">Email :</label>
-                    <input type="email" id="email" name="email" placeholder="Data">
+                    <input type="email" id="email" name="email" value="<?php echo $row['email']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="password">Password :</label>
-                    <input type="text" id="password" name="password" placeholder="Data">
+                    <input type="text" id="password" name="password" value="<?php echo $row['password']; ?>">
                 </div>
 
                 <div class="input-box">
                     <label for="alamat">Alamat :</label>
-                    <input type="text" id="alamat" name="alamat" placeholder="Data">
+                    <input type="text" id="alamat" name="alamat" value="<?php echo $row['alamat']; ?>">
                 </div>
 
                 <button type="submit" name="btn-popup" class="btn-popup update-popup">Update</button>

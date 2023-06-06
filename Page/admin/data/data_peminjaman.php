@@ -67,7 +67,7 @@
                             echo '<td>' . $row["kondisi_akhir"] . '</td>';
                             echo '<td>' . $row["denda"] . '</td>';
                             echo '<td class="aksi">';
-                            echo '<button type="button" class="update" onclick="updateForm()">Update</button>';
+                            echo '<button type="button" class="update" onclick="updateForm(' . json_encode($row) . ')">Update</button>';
                             echo '<button type="button" class="delete" onclick="window.location.href = \'index.php?page=delete_peminjaman&id=' . $row_number . '\';">Delete</button>';
                             echo '</td>';
                             echo '</tr>';
