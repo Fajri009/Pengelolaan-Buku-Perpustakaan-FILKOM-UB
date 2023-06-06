@@ -96,7 +96,7 @@
             <form method="POST" action="index.php?page=update_buku" enctype="multipart/form-data">
             <div class="input-box">
                     <label for="judul_buku">Judul Buku :</label>
-                    <input type="text" id="judul_buku" name="judul_buku" placeholder="Data">
+                    <input type="text" id="judul_buku" name="judul_buku" value="<?php echo $row['judul_buku']; ?>">
                 </div>
                 
                 <div class="input-box">

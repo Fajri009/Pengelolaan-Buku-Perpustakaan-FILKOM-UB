@@ -68,7 +68,7 @@
                             echo '<td>' . $row["denda"] . '</td>';
                             echo '<td class="aksi">';
                             echo '<button type="button" class="update" onclick="updateForm()">Update</button>';
-                            echo '<button type="button" class="delete" onclick="">Delete</button>';
+                            echo '<button type="button" class="delete" onclick="window.location.href = \'index.php?page=delete_peminjaman&id=' . $row_number . '\';">Delete</button>';
                             echo '</td>';
                             echo '</tr>';
                             $row_number++;
@@ -88,7 +88,7 @@
     <div class="popup-form-container" id="tambahPopupForm">
         <div class="input-group">
             <h2>Tambah Data Peminjaman Buku</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=tambah_peminjaman">
                 <div class="input-box">
                     <label for="nama_anggota">Nama Anggota :</label>
                     <input type="text" id="nama_anggota" name="nama_anggota" placeholder="Nama Anggota">
@@ -111,12 +111,20 @@
 
                 <div class="input-box">
                     <label for="kondisi_dipinjam">Kondisi Buku Dipinjam :</label>
-                    <input type="text" id="kondisi_dipinjam" name="kondisi_dipinjam" placeholder="Kondisi Buku Dipinjam">
+                    <select id="kondisi_dipinjam" name="kondisi_dipinjam">
+                        <option value="" disabled selected>Pilih salah satu</option>
+                        <option value="baik">Baik</option>
+                        <option value="buruk">Buruk</option>
+                    </select>
                 </div>
 
                 <div class="input-box">
                     <label for="kondisi_dikembalikan">Kondisi Buku Dikembalikan :</label>
-                    <input type="number" id="kondisi_dikembalikan" name="kondisi_dikembalikan" placeholder="Kondisi Buku Dikembalikan">
+                    <select id="kondisi_dikembalikan" name="kondisi_dikembalikan">
+                        <option value="" disabled selected>Pilih salah satu</option>
+                        <option value="baik">Baik</option>
+                        <option value="buruk">Buruk</option>
+                    </select>
                 </div>
 
                 <button type="submit" name="btn-popup" class="btn-popup tambah-popup">Tambah</button>
@@ -127,7 +135,7 @@
     <div class="popup-form-container" id="updatePopupForm">
         <div class="input-group">
             <h2>Update Data Peminjaman Buku</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=update_peminjaman">
                 <div class="input-box">
                     <label for="nama_anggota">Nama Anggota :</label>
                     <input type="text" id="nama_anggota" name="nama_anggota" placeholder="Data">
@@ -150,12 +158,20 @@
 
                 <div class="input-box">
                     <label for="kondisi_dipinjam">Kondisi Buku Dipinjam :</label>
-                    <input type="text" id="kondisi_dipinjam" name="kondisi_dipinjam" placeholder="Data">
+                    <select id="kondisi_dipinjam" name="kondisi_dipinjam">
+                        <option value="" disabled selected>Pilih salah satu</option>
+                        <option value="baik">Baik</option>
+                        <option value="buruk">Buruk</option>
+                    </select>
                 </div>
 
                 <div class="input-box">
                     <label for="kondisi_dikembalikan">Kondisi Buku Dikembalikan :</label>
-                    <input type="number" id="kondisi_dikembalikan" name="kondisi_dikembalikan" placeholder="Data">
+                    <select id="kondisi_dikembalikan" name="kondisi_dikembalikan">
+                        <option value="" disabled selected>Pilih salah satu</option>
+                        <option value="baik">Baik</option>
+                        <option value="buruk">Buruk</option>
+                    </select>
                 </div>
 
                 <button type="submit" name="btn-popup" class="btn-popup update-popup">Update</button>

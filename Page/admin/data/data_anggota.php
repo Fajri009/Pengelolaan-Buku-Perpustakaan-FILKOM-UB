@@ -36,8 +36,8 @@
                                         <td><?php echo $row['password']; ?></td>
                                         <td><?php echo $row['alamat']; ?></td>
                                         <td class="aksi">
-                                            <button type="button" class="update" onclick="updateForm()">Update</button>
-                                            <button type="button" class="delete" onclick="">Delete</button>
+                                            <button type="button" class="update" onclick="updateForm(<?php echo $row['id_user']; ?>)">Update</button>
+                                            <button type="button" class="delete" onclick="window.location.href = 'index.php?page=delete_anggota&id=<?php echo $row['id_user']; ?>';">Delete</button>
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -88,7 +88,7 @@
     <div class="popup-form-container" id="updatePopupForm">
         <div class="input-group">
             <h2>Update Data Anggota</h1>
-            <form method="POST">
+            <form method="POST" action="index.php?page=update_anggota">
                 <div class="input-box">
                     <label for="kode_anggota">Kode Anggota :</label>
                     <input type="text" id="kode_anggota" name="kode_anggota" placeholder="Data">
@@ -124,7 +124,6 @@
         </div>
     </div>
             
-                <script src="Page/admin/data/popup.js"></script>
-            </body>
-            </html>
-            <?php
+    <script src="Page/admin/data/popup.js"></script>
+    </body>
+</html>

@@ -103,6 +103,31 @@ switch ($page) {
         $memberDataController = new MemberDataController();
         $memberDataController->tambah_anggota();
         break;
+    case 'update_anggota':
+        require_once "controller/MemberDataController.php";
+        $memberDataController = new MemberDataController();
+        $memberDataController->updateAnggota();
+        break;
+    case 'delete_anggota':
+        require_once "controller/MemberDataController.php";
+        $memberDataController = new MemberDataController();
+        $memberDataController->delete($id);
+        break;
+    case 'tambah_peminjaman':
+        require_once "controller/BorrowDataController.php";
+        $BorrowController = new BorrowDataController();
+        $BorrowController->tambahPeminjaman();
+        break;
+    case 'update_peminjaman':
+        require_once "controller/BorrowDataController.php";
+        $BorrowController = new BorrowDataController();
+        $BorrowController->updatePeminjaman();
+        break;
+    case 'delete_peminjaman':
+        require_once "controller/BorrowDataController.php";
+        $BorrowController = new BorrowDataController();
+        $BorrowController->delete($id);
+        break;
     default:
         echo "404 Page Not Found";
         break;
